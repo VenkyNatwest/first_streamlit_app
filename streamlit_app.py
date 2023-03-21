@@ -20,8 +20,8 @@ fruits_to_show=my_fruit_list.loc[selected_fruits]
 streamlit.dataframe(fruits_to_show)
 
 streamlit.header('Fruityvise fruit advice')
-try
-  fruit_choice=streamlit.text_input('What fruit would you like nformation about ?','kiwi')
+try:
+  fruit_choice=streamlit.text_input('What fruit would you like nformation about ?')
   if not fruit_choice:
      streamlit.error('Please select a fruit')
   else
