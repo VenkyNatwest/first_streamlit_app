@@ -47,7 +47,7 @@ if streamlit.button('Click to load fruits'):
               streamlit.error('No records found')
      else:
           streamlit.dataframe(my_data_row)
-
+     my_cnx.close()     
 
 def insert_fruit_to_list(fruit_to_add):
      with my_cnx.cursor() as my_cur:
@@ -61,4 +61,5 @@ if streamlit.button('Add my fruit to list'):
      my_cnx =snowflake.connector.connect(**streamlit.secrets["snowflake"])
      resulttext= insert_fruit_to_list(add_my_fruit)
      streamlit.write(resulttext)
+     my_cnx.close()
 
